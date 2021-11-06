@@ -3,7 +3,6 @@ import React from 'react';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3 from 'web3';
 import { newKitFromWeb3 } from '@celo/contractkit';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default class WalletConnect extends React.Component {
 
@@ -16,7 +15,7 @@ export default class WalletConnect extends React.Component {
     }
 
     this.connect = this.connect.bind(this)
-    this.sendcUSD = this.sendcUSD.bind(this)
+    // this.sendcUSD = this.sendcUSD.bind(this)
     this.disconnect = this.disconnect.bind(this)
   }
 
@@ -41,20 +40,21 @@ export default class WalletConnect extends React.Component {
     this.setState({provider, kit})
   }
 
-  sendcUSD = async () => {
-    let kit = this.state.kit
+  // sendcUSD = async () => {
+  //   let kit = this.state.kit
 
-    let amount = kit.web3.utils.toWei('0.001', 'ether')
+  //   let amount = kit.web3.utils.toWei('0.001', 'ether')
 
-    const stabletoken = await kit.contracts.getStableToken()
-    const tx = await stabletoken.transfer(this.state.someAddress, amount).send()
-    const receipt = await tx.waitReceipt()
+  //   const stabletoken = await kit.contracts.getStableToken()
+  //   const tx = await stabletoken.transfer(this.state.someAddress, amount).send()
+  //   const receipt = await tx.waitReceipt()
 
-    console.log(receipt)
-  }
+  //   console.log(receipt)
+  // }
 
   disconnect = async() => {
     await this.state.provider.disconnect()
+    this.setState({provider: null, kit: null})
   }
 
   render(){
@@ -63,7 +63,7 @@ export default class WalletConnect extends React.Component {
 
     if(this.state.provider !== null){
       button = (<div>
-                  <button onClick={() => this.sendcUSD()}>Send 0.001 cUSD</button>
+                  <button onClick={() => this.disconnect()}>Disconnect</button>
                 </div>)
       renderSite = this.props.site
     } else {
@@ -81,10 +81,7 @@ export default class WalletConnect extends React.Component {
         <div>
             {button}
             <p>{account}</p>
-            <button onClick={() => this.disconnect()}>Disconnect</button>
-            <p>
-            {renderSite}
-            </p>
+            <p>{renderSite}</p>
         </div>
     )
   } 
