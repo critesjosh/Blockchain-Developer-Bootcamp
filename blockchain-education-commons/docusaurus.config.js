@@ -58,14 +58,9 @@ const config = {
             type: 'doc',
             docId: 'S00-intro/L1-course-intro/intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Course',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
