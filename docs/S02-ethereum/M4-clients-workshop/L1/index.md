@@ -70,19 +70,19 @@ The quickstart will download and we will get the following prompt. For the purpo
 
 We are not trying out Codefi Orchestrate in this demo, so hit “N for the prompt:
 
-<pre>    Do you want to try out Codefi Orchestrate? Note: choosing yes will direct you to a login/registration page. [Y/n]
+```    Do you want to try out Codefi Orchestrate? Note: choosing yes will direct you to a login/registration page. [Y/n]
     N
-  </pre>
+  ```
 
 We do want to enable support for private transactions, so choose Y for the following prompt:
 
-<pre>    Do you wish to enable support for private transactions? [Y/n]
+```    Do you wish to enable support for private transactions? [Y/n]
     Y
-  </pre>
+  ```
 
-<pre>    Do you wish to enable support for logging with ELK (Elasticsearch, Logstash & Kibana)? [y/N]
+```    Do you wish to enable support for logging with ELK (Elasticsearch, Logstash & Kibana)? [y/N]
     Y
-  </pre>
+  ```
 
 This will look like:
 
@@ -90,7 +90,7 @@ This will look like:
 
 The default directory that will be created to store these files will be named `quorum-test-network`, but you can rename the network on this next line:
 
-<pre>Where should we create the config files for this network? Please choose either an empty directory, or a path to a new directory that does not yet exist. Default: ./quorum-test-network</pre>
+```Where should we create the config files for this network? Please choose either an empty directory, or a path to a new directory that does not yet exist. Default: ./quorum-test-network```
 
 For example, if I wanted to name the directory `besu-test-network`, I would enter `./besu-test-network` and this would create a new directory called `besu-test-network`. The name of the new directory has to be a directory that does not exist, or else we will get an error.
 
@@ -114,29 +114,29 @@ Congratulations! You’ve spun up a private Ethereum network on your local compu
 
 If you have use Docker and Docker compose previously, particularly with a previous version of this quickstart, it is likely that you could run into an error upon start up:
 
-<pre>ERROR: Pool overlaps with other one on this address space</pre>
+```ERROR: Pool overlaps with other one on this address space```
 
 If you get this error, it means that even though the docker containers are down, the networks may still exist. A longer thread explaining this issue can be found [here.](https://github.com/maxking/docker-mailman/issues/85)
 
 A helpful resolution is to open up the command line and run the following command:
 
-<pre>docker network prune</pre>
+```docker network prune```
 
 If that does not work, run the following combination of commands
 
-<pre>docker-compose down
+```docker-compose down
 docker network prune
-  </pre>
+  ```
 
 This will restart the Docker service, and hopefully resolve any overlap conflicts.
 
 You can also run
 
-<pre>run docker ps</pre>
+```run docker ps```
 
 to check for any overlapping registered containers. Once those are identified, use
 
-<pre>docker rm</pre>
+```docker rm```
 
 to remove the containers that are overlapping.
 

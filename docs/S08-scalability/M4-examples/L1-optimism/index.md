@@ -62,7 +62,7 @@ Let's get started! (For more detail, you can find the tutorial this lesson is ba
 
 From a new directory, `unbox` the Optimism box:
 
-<pre>truffle unbox optimism</pre>
+```truffle unbox optimism```
 
 You will need at least one mnemonic to use with the network. The <code>.dotenv</code> npm package has been installed for you, and you will need to create a <code>.env</code> file for storing your mnemonic and any other needed private information.
 
@@ -73,12 +73,12 @@ If you are unfamiliar with using <code>.env</code> for managing your mnemonics a
 Use touch <code>.env</code> in the command line to create a <code>.env</code> file at the root of your project.
 Open the <code>.env</code> file in your preferred IDE
 Add the following, filling in your own Infura project key and mnemonics:
-<pre>
+```
 MNEMONIC="candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
 INFURA_KEY="<Your Infura Project ID>"
 GANACHE_MNEMONIC="<Your Ganache Mnemonic>"
 KOVAN_MNEMONIC="<Your Kovan Mnemonic>"
-</pre>
+```
 <i>Note: the value for the <code>MNEMONIC</code> above is the one you should use, as it is expected within the local Optimism Ethereum network we will run in this Truffle Box.</i>
 
 As you develop your project, you can put any other sensitive information in this file. You can access it from other files with require('dotenv').config() and refer to the variable you need with <code>process.env['<YOUR_VARIABLE>']</code>.
@@ -93,7 +93,7 @@ Another difference: When you compile or migrate, the resulting <code>json</code>
 
 The SimpleStorage.sol contract code is already in both the <code>ethereum</code> and <code>optimism</code> directories. To compile using the Optimism Virtual Machine compiler, run:
 
-<pre>npm run compile:ovm</pre>
+```npm run compile:ovm```
 
 As we mentioned earlier, the OVM and EVM compiler are *slightly* different, so keep an eye out for any issues or errors.
 
@@ -101,11 +101,11 @@ As we mentioned earlier, the OVM and EVM compiler are *slightly* different, so k
 
 Now that we've compiled the contract for Optimism, we can migrate it to an Optimism Layer 2 network. First, let's just try to our local Ganache, which will be almost similar to a normal Ethereum ganache instance:
 
-<pre>npm run migrate:ovm --network=ganache</pre>
+```npm run migrate:ovm --network=ganache```
 
 This may be a bit underwhelming! However, if we have loaded in our Infura Optimism Kovan network endpoint and have enough Optimism Kovan eth in the wallet tied to the `.env` mnemonic, we can also run:
 
-<pre>npm run migrate:ovm --network=optimistic_kovan</pre>
+```npm run migrate:ovm --network=optimistic_kovan```
 
 *Please note: as of early September, the Optimism box is having issues with gas prices on Kovan network. Local or Mainnet Optimism deployment may be better.*
 
