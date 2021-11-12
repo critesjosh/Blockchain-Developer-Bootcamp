@@ -113,7 +113,7 @@ function doTheTing(){
 
 ``` jsx live
 
-function MetamaskUtils(){
+function MetamaskTest(){
 
     async function send(){
         let accounts = await web3.eth.getAccounts()
