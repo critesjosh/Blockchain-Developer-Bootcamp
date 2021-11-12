@@ -7,12 +7,16 @@
 
 import React from 'react';
 import WalletConnectWrapper from '../../components/WalletConnectWrapper';
+import Web3 from 'web3';
+import { newKitFromWeb3 } from '@celo/contractkit';
 
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
   ...React,
-  WalletConnectWrapper
+  WalletConnectWrapper,
+  Web3,
+  newKitFromWeb3,
 };
 
 export default ReactLiveScope;

@@ -1,6 +1,5 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-// import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export default class WalletConnectWrapper extends React.Component {
   
