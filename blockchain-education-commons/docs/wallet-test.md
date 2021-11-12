@@ -103,6 +103,7 @@ function MetamaskUtils(){
 // Outline the problem here (as a React component)
 function doTheTing(){
   
+
   return <></>
 }
 ```
@@ -114,30 +115,25 @@ function doTheTing(){
 
 function MetamaskUtils(){
 
-    const CUSD_PARAMS = {
-      type: 'ERC20',
-      options: {
-        address: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
-        symbol: 'cUSD',
-        decimals: 18
-      }
-    }
-
-    async function addToken(){
-        await window.ethereum.request({
-          method: 'wallet_watchAsset',
-          params: CUSD_PARAMS
-        });    
+    async function send(){
+        let accounts = await web3.eth.getAccounts()
+        let tx = {
+          to: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
+          value: 100000000000000000,
+          from: accounts[0]
+        } 
+  
+        let result = await web3.eth.sendTransaction(tx)
+        console.log(result)
     }
 
     return (
       <div>
-        <button onClick={addToken}>Add cUSD (mainnet)</button>
+        <button onClick={send}>Send Tx</button>
       </div>
     )
 }
 ```
 
 </TabItem>
-
 </Tabs>

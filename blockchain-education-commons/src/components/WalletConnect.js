@@ -81,7 +81,7 @@ export default class WalletConnect extends React.Component {
         <div>
             {button}
             <p>{account}</p>
-            <p>{renderSite}</p>
+            <div>{renderSite}</div>
         </div>
     )
   } 
