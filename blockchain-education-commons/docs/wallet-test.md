@@ -101,7 +101,7 @@ function MetamaskUtils(){
 
 ```jsx live
 // Outline the problem here (as a React component)
-function doTheTing(){
+function doTheThing(){
   
 
   return <></>
