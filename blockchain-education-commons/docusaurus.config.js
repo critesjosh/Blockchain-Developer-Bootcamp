@@ -21,6 +21,16 @@ const config = {
     path.resolve(__dirname, 'src/plugins/web3-polyfill.ts'),
   ],
   themes: ['@docusaurus/theme-live-codeblock'],
+  scripts: [
+    {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1-rc.3/web3.min.js',
+      async: true,
+    },
+    {
+      src: 'https://cdn.ethers.io/lib/ethers-5.2.umd.min.js',
+      async: true,
+    },
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',

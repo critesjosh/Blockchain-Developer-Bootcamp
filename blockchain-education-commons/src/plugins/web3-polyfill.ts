@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 
+
 module.exports = function (context, options) {
   return {
     name: 'web3-polyfill',
@@ -15,7 +16,6 @@ module.exports = function (context, options) {
             stream: require.resolve("stream-browserify"),
             fs: false,
             net: false, 
-            Web3: require.resolve('web3'),
           },
         },
         plugins: [
