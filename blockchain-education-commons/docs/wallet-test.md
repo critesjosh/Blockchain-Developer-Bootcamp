@@ -115,6 +115,7 @@ function doTheThing(){
 function MetamaskTest(){
 
     async function send(){
+        let web3 = new Web3(window.ethereum)
         let accounts = await web3.eth.getAccounts()
         let tx = {
           to: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
