@@ -14,7 +14,8 @@ module.exports = function (context, options) {
             assert: require.resolve("assert"),
             stream: require.resolve("stream-browserify"),
             fs: false,
-            net: false,      
+            net: false, 
+            Web3: require.resolve('web3'),
           },
         },
         plugins: [

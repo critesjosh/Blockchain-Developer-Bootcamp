@@ -103,7 +103,6 @@ function MetamaskUtils(){
 // Outline the problem here (as a React component)
 function doTheThing(){
   
-
   return <></>
 }
 ```
