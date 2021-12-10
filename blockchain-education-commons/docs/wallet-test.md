@@ -140,5 +140,5 @@ function MetamaskTest(){
   
 ## REPLit
   
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@critesjosh/celo-transactions-lesson?lite=true"></iframe>
+<iframe frameborder="0" width="100%" height="1000px" src="https://replit.com/@critesjosh/celo-transactions-lesson?lite=true"></iframe>
 
